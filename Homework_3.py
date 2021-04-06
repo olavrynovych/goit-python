@@ -1,17 +1,17 @@
-def calculate_fibonacci(number):
+def fibonacci(n):
     
-    if number == 0:
+    if n == 0:
         return 0
-    if number in (1, 2):
+    if n in (1, 2):
         return 1
-    return calculate_fibonacci(number - 1) + calculate_fibonacci(number - 2)
+    return fibonacci(n - 1) + fibonacci(n - 2)
 
 
 def main():
     
     n = 0
     n = int(input('Enter number:'))
-    result = calculate_fibonacci(n)
+    result = fibonacci(n)
     print(f'Fibonacci result is: {result}')
 
     if __name__ == '__main__':
