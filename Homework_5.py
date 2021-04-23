@@ -22,8 +22,15 @@ def remove_spec(str):
             new_str += n
     
     return new_str
-
-
+    
+def main():
+    input_string = input('Please enter string to convert:')
+    result = remove_spec(input_string)
+    result = normalize(result)
+    print(result)
+    
+if __name__ == '__main__':
+    main()
     
 
 
