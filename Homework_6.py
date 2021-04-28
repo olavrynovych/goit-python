@@ -58,6 +58,11 @@ def move_file(file_path, place):
     shutil.move(file_path, path_combine(folder, file_path.name))
 
 
+def unpack_archive(fullpath, targetfolder):
+    shutil.unpack_archive(fullpath, targetfolder)
+    os.remove(fullpath)
+
+
 def recursive(path):
 
     if path.exists():
@@ -100,7 +105,8 @@ def recursive(path):
                     move_file(path, folders[2])
                 elif extension in arc_ext:
                     archives[path] = path.name
-                    move_file(path, folders[0])
+                    #move_file(path, folders[0])
+                    unpack_archive(path, path_combine(source_dir, folders[0]))
                 else:
                     unknown[path] = path.name
                     move_file(path, folders[5])
