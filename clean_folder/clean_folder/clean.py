@@ -133,8 +133,8 @@ def remove_folder_ifempty(path):
 
 
 def main():
-    # input = sys.argv[1]
-    input = 'c:\sort_test'
+     input = sys.argv[1]
+    #input = 'c:\sort_test'
     global source_dir
     source_dir = pathlib.Path(input)
     recursive(source_dir)
