@@ -54,7 +54,7 @@ class Record(Field, UserDict):
 
     def days_to_birthday(self):
         if not Birthday == None:
-            date = datetime.strptime(Birthday, '%d-%m')
+            date = datetime.strptime(Birthday.value, '%d-%m')
             today = datetime.now()
             date = date.replace(year=today.year)
             if today < date:
